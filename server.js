@@ -4,12 +4,12 @@ const app = express();
 const PORT = 3000;
 
 // Middleware para servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.json());
 
 // Ruta para la página de inicio
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 app.listen(PORT, () => {
