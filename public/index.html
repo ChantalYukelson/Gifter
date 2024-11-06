@@ -27,8 +27,8 @@
     /* Evitar superposición con la barra de búsqueda */
     .banner {
       position: relative;
-      padding: 100px 0; /* Aumentamos el padding para dar espacio */
-      background: #fff; /* Fondo blanco */
+      padding: 100px 0;
+      background: #fff;
       text-align: center;
       color: #333;
     }
@@ -36,7 +36,7 @@
     /* Estilo del buscador */
     .buscador {
       position: relative;
-      z-index: 1; /* Aseguramos que no se superponga */
+      z-index: 1;
       margin-top: 30px;
     }
 
@@ -48,9 +48,8 @@
       width: 250px;
     }
 
-    /* Estilo del botón de búsqueda */
     .buscador button {
-      background-color: #e74c3c; /* Rojo brillante */
+      background-color: #e74c3c;
       color: white;
       border: none;
       padding: 10px 20px;
@@ -59,12 +58,12 @@
     }
 
     .buscador button:hover {
-      background-color: #c0392b; /* Rojo más oscuro */
+      background-color: #c0392b;
     }
 
-    /* Barra de navegación con colores más suaves */
+    /* Barra de navegación */
     .navbar {
-      background-color: #e74c3c; /* Rojo principal */
+      background-color: #e74c3c;
     }
 
     .navbar a {
@@ -73,7 +72,7 @@
     }
 
     .navbar a:hover {
-      color: #2c3e50 !important; /* Negro suave al pasar el mouse */
+      color: #2c3e50 !important;
     }
 
     .navbar-toggler-icon {
@@ -82,7 +81,7 @@
 
     /* Carrusel de productos */
     .carrusel h2 {
-      color: #e74c3c; /* Título en rojo */
+      color: #e74c3c;
     }
 
     .carousel-container {
@@ -131,7 +130,7 @@
 
     /* Estilo de las categorías */
     .categorias h2 {
-      color: #e74c3c; /* Título en rojo */
+      color: #e74c3c;
     }
 
     .categoria-lista {
@@ -159,12 +158,82 @@
     }
 
     footer a {
-      color: #e74c3c; /* Rojo brillante para los enlaces */
+      color: #e74c3c;
       text-decoration: none;
     }
 
     footer a:hover {
-      color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+      color: #c0392b;
+    }
+
+    /* Estilos del chatbot flotante */
+    .chatbot-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e74c3c;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .chatbot-container {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      z-index: 999;
+    }
+
+    .chatbot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .chatbot-body {
+      max-height: 250px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+
+    .chatbot-footer input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+
+    .chatbot-footer button {
+      width: 15%;
+      background-color: #e74c3c;
+      border: none;
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .chatbot-footer button:hover {
+      background-color: #c0392b;
+    }
+
+    .buscador input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      width: 400px; /* Aumenta el ancho del cuadro de búsqueda */
     }
   </style>
 </head>
@@ -179,45 +248,26 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Regalos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="comunidad.html">Comunidad Gifter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nosotros.html">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto-footer">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <button onclick="openChatbot()" class="btn btn-outline-light">Chatbot</button>
-          </li>
-          <li class="nav-item">
-            <a href="#carrito" id="carrito-icon" class="nav-link">
-              <i class="fas fa-shopping-cart"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="login.html" id="usuario-icon" class="nav-link">
-              <i class="fas fa-user"></i>
-            </a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/">Regalos</a></li>
+          <li class="nav-item"><a class="nav-link" href="comunidad.html">Comunidad Gifter</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto-footer">Contacto</a></li>
+          <li class="nav-item"><a href="#carrito" class="nav-link"><i class="fas fa-shopping-cart"></i></a></li>
+          <li class="nav-item"><a href="login.html" class="nav-link"><i class="fas fa-user"></i></a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Banner principal -->
-  <header class="banner">
-    <h1>Gifter</h1>
-    <p>Encuentra el regalo ideal para cualquier ocasión</p>
-    <section class="buscador">
-      <input type="text" id="busqueda" placeholder="Buscar regalos...">
-      <button onclick="buscarRegalos()">Buscar</button>
-    </section>
-  </header>
+<!-- Banner principal con mensaje de búsqueda animado -->
+<header class="banner">
+  <h1>Gifter</h1>
+  <p>Encuentra el regalo ideal para cualquier ocasión</p>
+  <section class="buscador">
+    <input type="text" id="busqueda" placeholder="Le quiero hacer un regalo a mi...">
+    <button onclick="buscarRegalos()">Buscar</button>
+  </section>
+</header>
 
   <!-- Carrusel de productos -->
   <section class="carrusel">
@@ -225,18 +275,9 @@
     <div class="carousel-container">
       <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
       <div class="carousel-slides">
-        <div class="slide">
-          <img src="/images/producto1.jpg" alt="Producto 1">
-          <p>Producto 1</p>
-        </div>
-        <div class="slide">
-          <img src="/images/producto2.jpg" alt="Producto 2">
-          <p>Producto 2</p>
-        </div>
-        <div class="slide">
-          <img src="/images/producto3.jpg" alt="Producto 3">
-          <p>Producto 3</p>
-        </div>
+        <div class="slide"><img src="/images/producto1.jpg" alt="Producto 1"><p>Producto 1</p></div>
+        <div class="slide"><img src="/images/producto2.jpg" alt="Producto 2"><p>Producto 2</p></div>
+        <div class="slide"><img src="/images/producto3.jpg" alt="Producto 3"><p>Producto 3</p></div>
       </div>
       <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
     </div>
@@ -246,38 +287,98 @@
   <section class="categorias">
     <h2>Categorías Populares</h2>
     <div class="categoria-lista">
-      <div class="categoria-item">
-        <img src="/images/categoria1.jpg" alt="Deportes">
-        <p>Deportes</p>
-      </div>
-      <div class="categoria-item">
-        <img src="/images/categoria2.jpg" alt="Tecnología">
-        <p>Tecnología</p>
-      </div>
-      <div class="categoria-item">
-        <img src="/images/categoria3.jpg" alt="Moda">
-        <p>Moda</p>
-      </div>
-      <div class="categoria-item">
-        <img src="/images/categoria4.jpg" alt="Hogar">
-        <p>Hogar</p>
-      </div>
+      <div class="categoria-item"><img src="/images/categoria1.jpg" alt="Categoría 1"><p>Categoría 1</p></div>
+      <div class="categoria-item"><img src="/images/categoria2.jpg" alt="Categoría 2"><p>Categoría 2</p></div>
+      <div class="categoria-item"><img src="/images/categoria3.jpg" alt="Categoría 3"><p>Categoría 3</p></div>
+      <div class="categoria-item"><img src="/images/categoria4.jpg" alt="Categoría 4"><p>Categoría 4</p></div>
     </div>
   </section>
 
-  <!-- Footer con enlaces de contacto -->
-  <footer id="contacto-footer" class="text-center py-4">
-    <p>¡Conéctate con nosotros!</p>
-    <a href="https://www.instagram.com/tu_instagram" target="_blank" class="btn btn-outline-primary btn-sm">Instagram</a> |
-    <a href="mailto:contacto@gifter.com" class="btn btn-outline-primary btn-sm">Email</a> |
-    <a href="https://www.tiktok.com/@tu_tiktok" target="_blank" class="btn btn-outline-primary btn-sm">TikTok</a>
+  <!-- Footer -->
+  <footer id="contacto-footer">
+    <p>&copy; 2024 Gifter. Todos los derechos reservados.</p>
+    <p><a href="mailto:contacto@gifter.com">contacto@gifter.com</a></p>
   </footer>
 
-  <!-- Archivos JavaScript -->
+  <!-- Chatbot flotante -->
+  <div class="chatbot-float" onclick="toggleChatbot()">
+    <i class="fas fa-comment-dots"></i>
+  </div>
+
+  <!-- Chatbot flotante -->
+  <div class="chatbot-float" onclick="toggleChatbot()">
+    <i class="fas fa-comment-dots"></i>
+  </div>
+
+  <!-- Contenedor del chatbot -->
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <h5>¿Necesitas ayuda?</h5>
+      <button onclick="toggleChatbot()">X</button>
+    </div>
+    <div class="chatbot-body" id="chatbot-body">
+      <p>Hola, soy tu asistente de Gifter. ¿Para quién es el regalo?</p>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/app.js"></script>
-  <script src="/js/carousel.js"></script>
-  <script src="/js/chatbot.js"></script>
+  <script>
+    // Control del chatbot y mensaje de búsqueda animado
+    const chatbotBody = document.getElementById('chatbot-body');
+    const userInput = document.getElementById('user-input');
+    const chatbotContainer = document.querySelector('.chatbot-container');
+    const searchInput = document.getElementById('busqueda');
+
+    let currentMessageIndex = 0;
+    const messages = ["mamá", "amiga", "novia", "novio"];
+    setInterval(() => {
+      searchInput.placeholder = `Le quiero hacer un regalo a mi ${messages[currentMessageIndex]}`;
+      currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    }, 3000);
+
+    // Función para mostrar u ocultar el chatbot
+    function toggleChatbot() {
+      chatbotContainer.style.display = chatbotContainer.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Secuencia de preguntas del chatbot
+    const questions = [
+      "¿Para qué ocasión es el regalo? (cumpleaños, aniversario, etc.)",
+      "¿Qué edad tiene la persona que recibirá el regalo? (Por favor, ingresa un número)",
+      "¿Cuáles son los hobbies de esta persona? (elige uno: lectura, deporte, arte, tecnología, cocina)"
+    ];
+    let questionIndex = 0;
+
+    function sendMessage() {
+      const userMessage = userInput.value;
+      if (userMessage.trim()) {
+        chatbotBody.innerHTML += `<p><strong>Tú:</strong> ${userMessage}</p>`;
+        userInput.value = '';
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+        setTimeout(() => {
+          if (questionIndex < questions.length) {
+            chatbotBody.innerHTML += `<p><strong>Gifter:</strong> ${questions[questionIndex]}</p>`;
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            questionIndex++;
+          } else {
+            chatbotBody.innerHTML += `<p><strong>Gifter:</strong> ¡Gracias por la información! Te ayudaremos a encontrar el regalo perfecto.</p>`;
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+          }
+        }, 1000);
+      }
+    }
+
+    // Función de búsqueda de regalos (placeholder)
+    function buscarRegalos() {
+      const busqueda = document.getElementById('busqueda').value;
+      alert(`Buscando regalos relacionados con: ${busqueda}`);
+    }
+  </script>
 </body>
 </html>
-
