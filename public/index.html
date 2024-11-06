@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gifter - Encuentra el regalo ideal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Ajuste para la tipografía del banner */
+    .banner h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 3.5rem;
+      color: #e74c3c; /* Rojo más intenso */
+      margin-bottom: 20px;
+    }
+
+    .banner p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      color: #d5a6bd; /* Rosa claro */
+    }
+
+    /* Evitar superposición con la barra de búsqueda */
+    .banner {
+      position: relative;
+      padding: 100px 0; /* Aumentamos el padding para dar espacio */
+      background: #fff; /* Fondo blanco */
+      text-align: center;
+      color: #333;
+    }
+
+    /* Estilo del buscador */
+    .buscador {
+      position: relative;
+      z-index: 1; /* Aseguramos que no se superponga */
+      margin-top: 30px;
+    }
+
+    .buscador input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      width: 250px;
+    }
+
+    /* Estilo del botón de búsqueda */
+    .buscador button {
+      background-color: #e74c3c; /* Rojo brillante */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .buscador button:hover {
+      background-color: #c0392b; /* Rojo más oscuro */
+    }
+
+    /* Barra de navegación con colores más suaves */
+    .navbar {
+      background-color: #e74c3c; /* Rojo principal */
+    }
+
+    .navbar a {
+      color: white !important;
+      font-size: 1.1rem;
+    }
+
+    .navbar a:hover {
+      color: #2c3e50 !important; /* Negro suave al pasar el mouse */
+    }
+
+    .navbar-toggler-icon {
+      background-color: white;
+    }
+
+    /* Carrusel de productos */
+    .carrusel h2 {
+      color: #e74c3c; /* Título en rojo */
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slides .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .carousel-slides img {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .carousel-button.left {
+      left: 10px;
+    }
+
+    .carousel-button.right {
+      right: 10px;
+    }
+
+    /* Estilo de las categorías */
+    .categorias h2 {
+      color: #e74c3c; /* Título en rojo */
+    }
+
+    .categoria-lista {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .categoria-item {
+      width: 22%;
+      text-align: center;
+    }
+
+    .categoria-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #e74c3c; /* Rojo brillante para los enlaces */
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Gifter</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Regalos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comunidad.html">Comunidad Gifter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto-footer">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <button onclick="openChatbot()" class="btn btn-outline-light">Chatbot</button>
+          </li>
+          <li class="nav-item">
+            <a href="#carrito" id="carrito-icon" class="nav-link">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="login.html" id="usuario-icon" class="nav-link">
+              <i class="fas fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner principal -->
+  <header class="banner">
+    <h1>Gifter</h1>
+    <p>Encuentra el regalo ideal para cualquier ocasión</p>
+    <section class="buscador">
+      <input type="text" id="busqueda" placeholder="Buscar regalos...">
+      <button onclick="buscarRegalos()">Buscar</button>
+    </section>
+  </header>
+
+  <!-- Carrusel de productos -->
+  <section class="carrusel">
+    <h2>Destacados</h2>
+    <div class="carousel-container">
+      <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
+      <div class="carousel-slides">
+        <div class="slide">
+          <img src="/images/producto1.jpg" alt="Producto 1">
+          <p>Producto 1</p>
+        </div>
+        <div class="slide">
+          <img src="/images/producto2.jpg" alt="Producto 2">
+          <p>Producto 2</p>
+        </div>
+        <div class="slide">
+          <img src="/images/producto3.jpg" alt="Producto 3">
+          <p>Producto 3</p>
+        </div>
+      </div>
+      <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Sección de categorías -->
+  <section class="categorias">
+    <h2>Categorías Populares</h2>
+    <div class="categoria-lista">
+      <div class="categoria-item">
+        <img src="/images/categoria1.jpg" alt="Deportes">
+        <p>Deportes</p>
+      </div>
+      <div class="categoria-item">
+        <img src="/images/categoria2.jpg" alt="Tecnología">
+        <p>Tecnología</p>
+      </div>
+      <div class="categoria-item">
+        <img src="/images/categoria3.jpg" alt="Moda">
+        <p>Moda</p>
+      </div>
+      <div class="categoria-item">
+        <img src="/images/categoria4.jpg" alt="Hogar">
+        <p>Hogar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer con enlaces de contacto -->
+  <footer id="contacto-footer" class="text-center py-4">
+    <p>¡Conéctate con nosotros!</p>
+    <a href="https://www.instagram.com/tu_instagram" target="_blank" class="btn btn-outline-primary btn-sm">Instagram</a> |
+    <a href="mailto:contacto@gifter.com" class="btn btn-outline-primary btn-sm">Email</a> |
+    <a href="https://www.tiktok.com/@tu_tiktok" target="_blank" class="btn btn-outline-primary btn-sm">TikTok</a>
+  </footer>
+
+  <!-- Archivos JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/carousel.js"></script>
+  <script src="/js/chatbot.js"></script>
+</body>
+</html>
+

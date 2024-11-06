@@ -1,0 +1,381 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a, .navbar button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar button:hover {
+  background-color: #ff4d4f;
+}
+
+/* Banner principal */
+.banner {
+  text-align: center;
+  background-color: #ff4d4f;
+  color: #fff;
+  padding: 70px 20px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #ffe0e6;
+}
+
+/* Buscador sobre el banner */
+.buscador {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.buscador input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ff4d4f;
+  border-radius: 4px 0 0 4px;
+  width: 300px;
+}
+
+.buscador button {
+  padding: 10px 15px;
+  font-size: 1em;
+  border: none;
+  background-color: #ff4d4f;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buscador button:hover {
+  background-color: #d43b3e;
+}
+
+/* Carrusel de productos */
+.carrusel {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.carrusel h2 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
+
+/* Sección de categorías */
+.categorias {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+.categorias h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #ff4d4f;
+}
+
+.categoria-lista {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.categoria-item {
+  text-align: center;
+  width: 120px;
+  transition: transform 0.3s ease;
+}
+
+.categoria-item:hover {
+  transform: scale(1.05);
+}
+
+.categoria-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.categoria-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Chatbot */
+.chatbot-container {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.chatbot-header {
+  background-color: #ff4d4f;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+
+.chatbot-content {
+  padding: 15px;
+}
+
+.chatbot-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.chatbot-content button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-content button:hover {
+  background-color: #d43b3e;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #333;
+  color: white;
+  position: relative;
+}
+
+footer a {
+  color: #ff4d4f;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff7875;
+}
+
+/* Formulario de registro */
+form {
+  width: 80%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #d43b3e;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+p a {
+  color: #ff4d4f;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo del perfil de Sofía */
+.perfil {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.perfil h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.perfil-info p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.perfil-info h3 {
+  margin-top: 20px;
+  font-size: 1.4em;
+}
+
+.wishlist {
+  margin-top: 40px;
+}
+
+.wishlist h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.wishlist-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.wishlist-item {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wishlist-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+
