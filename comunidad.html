@@ -110,6 +110,62 @@
     footer a:hover {
       color: #c0392b;
     }
+    
+
+    .perfil .img-representativa {
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: 150px; /* Asegura que la imagen tenga la misma altura */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones dentro del círculo */
+    border: 3px solid #e74c3c; /* Borde opcional */
+    margin-bottom: 20px; /* Espacio debajo de la imagen */
+  }
+
+  .perfil {
+    padding: 20px; /* Reduce el padding para ajustar la posición */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    min-height: 60vh; /* Asegura que la sección ocupe al menos el 60% de la altura de la ventana */
+  }
+
+  /* Estilo solo para la imagen del perfil de Sofía */
+  .perfil .img-representativa {
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: 150px; /* Asegura que la imagen tenga la misma altura */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones dentro del círculo */
+    border: 3px solid #e74c3c; /* Borde opcional */
+    margin-bottom: 20px; /* Espacio debajo de la imagen */
+  }
+
+  /* Estilo para los títulos del perfil */
+  .perfil h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center; /* Centra el texto */
+  }
+  a.btn-container {
+  display: inline-block;
+}
+
+.unite-btn {
+  background-color: #e74c3c; /* Color de fondo original */
+  color: white;  /* Color del texto */
+  border: none;  /* Eliminar bordes */
+  padding: 10px 20px;  /* Tamaño del botón */
+  cursor: pointer;  /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 20px;  /* Bordes redondeados */
+  margin-top: 10px;  /* Espaciado superior */
+  width: 100%;  /* Ancho completo */
+}
+
+.unite-btn:hover {
+  background-color: #c0392b; /* Color de fondo al pasar el ratón */
+}
+
+
   </style>
 </head>
 <body>
@@ -117,7 +173,11 @@
   <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Gifter</a>
+      <a class="navbar-brand" href="index.html">
+        <button style="background: none; border: none; padding: 0;">
+          <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/rojo.png" alt="Gifter" style="width: 150px; height: auto;">
+        </button>
+      </a>       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -138,11 +198,17 @@
   <header class="banner">
     <h1>Comunidad Gifter</h1>
     <p>Conéctate con otros usuarios y comparte experiencias</p>
+    <!-- Botón Unite -->
+    <a href="register.html" class="btn-container">
+      <button class="unite-btn">Unite</button>
+    </a>
+    
   </header>
 
   <!-- Perfil de Sofía -->
   <section class="perfil">
-    <h2>Perfil de Sofía Cabrera</h2>
+    <h2>Sofía Cabrera</h2>
+    <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/regalo.jpeg" alt="Imagen representativa" class="img-representativa">
     <div class="perfil-info">
       <h3>Información Personal</h3>
       <p><strong>Edad:</strong> 22 años</p>
@@ -154,9 +220,6 @@
       <p><strong>Nivel de educación:</strong> Universitaria</p>
       <p><strong>Con quién vive:</strong> Con la familia (madre, padre, hermana)</p>
       <p><strong>Gustos:</strong> Viajar, hacer deporte, salir con amigos, moda, estar en redes sociales, tomar mate</p>
-
-      <h3>Un día en la vida de Sofía (Lunes a Viernes)</h3>
-      <p>Se levanta temprano para ir a la oficina contable en Microcentro. Trabaja de 9 a 17 hs, para llegar y regresar utiliza el subte D. En la oficina, suele llevarse su mate y tomarlo con sus compañeros. Es una persona que propone muchos planes con amigos y familia. Va al gimnasio dos veces por semana y los otros días se junta con amigas para caminar o correr y después toman café. También tiene planes frecuentes con su pareja, como merendar o cenar juntos. Los fines de semana, los sábados por la noche sale a cenar con sus amigas y luego van a bailar.</p>
 
       <h3>Marcas que le gustan</h3>
       <ul>
@@ -173,20 +236,20 @@
       <h2>Wishlist de Sofía</h2>
       <div class="wishlist-items">
         <div class="wishlist-item">
-          <img src="/images/zara-dress.jpg" alt="Vestido Zara">
+          <img src="https://static.zara.net/assets/public/6280/6503/91784f2a8d0b/f812c9b14bf3/02289707800-p/02289707800-p.jpg?ts=1712141394145&w=824" alt="Vestido Zara">
           <p>Vestido de Zara</p>
         </div>
         <div class="wishlist-item">
-          <img src="/images/adidas-sneakers.jpg" alt="Zapatillas Adidas">
+          <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/3bbecbdf584e40398446a8bf0117cf62_9366/Zapatillas_Samba_OG_Blanco_B75806_01_00_standard.jpg" alt="Zapatillas Adidas">
           <p>Zapatillas Adidas</p>
         </div>
         <div class="wishlist-item">
-          <img src="/images/stanley-bottle.jpg" alt="Botella Stanley">
+          <img src="https://acdn.mitiendanube.com/stores/004/475/493/products/captura-de-pantalla-2024-05-12-193155-543561b54e4322e77417155583568613-1024-1024-d0b9efab6a15f0a9b517164574128152-1024-1024-8ac4a0f3de74b95a5617242758510128-1024-1024.webp" alt="Botella Stanley">
           <p>Botella Stanley</p>
         </div>
         <div class="wishlist-item">
-          <img src="/images/bershka-jacket.jpg" alt="Chaqueta Bershka">
-          <p>Chaqueta Bershka</p>
+          <img src="https://www.kosiuko.com/media/catalog/product/2/2/221227_ksk_ecom_dia2_1028.jpg?optimize=low&fit=bounds&height=2298&width=1536" alt="Campera Kosiuko">
+          <p>Campera Kosiuko</p>
         </div>
       </div>
     </section>

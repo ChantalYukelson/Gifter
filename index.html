@@ -83,42 +83,39 @@ body {
       color: #d5a6bd; /* Rosa claro */
     }
 
-    /* Evitar superposición con la barra de búsqueda */
-    .banner {
-      position: relative;
-      padding: 100px 0;
-      background: #fff;
-      text-align: center;
-      color: #333;
-    }
-
-    /* Estilo del buscador */
     .buscador {
-      position: relative;
-      z-index: 1;
-      margin-top: 30px;
-    }
+  display: flex;
+  flex-direction: column;
+  width: 50%; /* Asegura que el buscador ocupe todo el ancho disponible */
+  margin-top: 20px;
+}
 
-    .buscador input {
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      width: 250px;
-    }
+.buscador input {
+  padding: 10px;
+  font-size: 1.2rem; /* Tamaño de fuente más grande para facilitar la lectura */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%; /* Hace que el campo de búsqueda ocupe todo el ancho */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
 
-    .buscador button {
-      background-color: #e74c3c;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 20px;
-    }
+.buscador button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
+  width: 100%; /* Hace que el botón también ocupe el 100% de ancho */
+}
 
-    .buscador button:hover {
-      background-color: #c0392b;
-    }
+.buscador button:hover {
+  background-color: #c0392b;
+}
+
+
+
 
     /* Barra de navegación */
     .navbar {
@@ -384,13 +381,6 @@ footer a:hover {
   background-color: #c0392b;
 }
 
-.buscador input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  width: 400px; /* Aumenta el ancho del cuadro de búsqueda */
-}
 
   </style>
 </head>
@@ -399,7 +389,11 @@ footer a:hover {
   <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="/">Gifter</a>
+      <a class="navbar-brand" href="index.html">
+        <button style="background: none; border: none; padding: 0;">
+          <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/rojo.png" alt="Gifter" style="width: 150px; height: auto;">
+        </button>
+      </a>   
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -459,9 +453,9 @@ footer a:hover {
   <div class="carousel-container">
     <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
     <div class="carousel-slides">
-      <div class="slide"><img src="/images/producto1.jpg" alt="Producto 1"><p>Producto 1</p></div>
-      <div class="slide"><img src="/images/producto2.jpg" alt="Producto 2"><p>Producto 2</p></div>
-      <div class="slide"><img src="/images/producto3.jpg" alt="Producto 3"><p>Producto 3</p></div>
+      <div class="slide"><img src="https://celadasa.vtexassets.com/arquivos/ids/266792/IP8400-1.jpg?v=638460356860200000" alt="Camiseta"><p>Camiseta Selección Argentina</p></div>
+      <div class="slide"><img src="https://bodelo.com.ar/wp-content/uploads/2022/11/Catalogo-Bodelo-2024-Full-18.jpg" alt="Set Matero"><p>Set Matero</p></div>
+      <div class="slide"><img src="https://saludwines.com.ar/wp-content/uploads/2024/05/RE11-scaled.jpg" alt="Vino"><p>Set Vino</p></div>
     </div>
     <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
   </div>
@@ -568,33 +562,33 @@ footer a:hover {
   <div class="row row-cols-1 row-cols-md-4 g-4"> <!-- Usamos la cuadrícula de Bootstrap -->
     <div class="col">
       <div class="card">
-        <img src="/images/categoria1.jpg" class="card-img-top" alt="Categoría 1">
+        <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/deporte.jpg" class="card-img-top" alt="Deportes">
         <div class="card-body">
-          <p class="card-text">Categoría 1</p>
+          <p class="card-text">Deportes</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <img src="/images/categoria2.jpg" class="card-img-top" alt="Categoría 2">
+        <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/moda.jpg" class="card-img-top" alt="Moda">
         <div class="card-body">
-          <p class="card-text">Categoría 2</p>
+          <p class="card-text">Moda</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <img src="/images/categoria3.jpg" class="card-img-top" alt="Categoría 3">
+        <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/hogar.jpg" class="card-img-top" alt="Hogar">
         <div class="card-body">
-          <p class="card-text">Categoría 3</p>
+          <p class="card-text">Hogar</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <img src="/images/categoria4.jpg" class="card-img-top" alt="Categoría 4">
+        <img src="/Users/chantalyukelson/Desktop/Gifter/public/images/personalizar.png" class="card-img-top" alt="Regalos Personalizados">
         <div class="card-body">
-          <p class="card-text">Categoría 4</p>
+          <p class="card-text">Regalos Personalizados</p>
         </div>
       </div>
     </div>
@@ -609,11 +603,6 @@ footer a:hover {
     <a href="mailto:contacto@gifter.com">Email</a> |
     <a href="https://www.tiktok.com/@tu_tiktok" target="_blank">TikTok</a>
   </footer>
-
-  <!-- Chatbot flotante -->
-  <div class="chatbot-float" onclick="toggleChatbot()">
-    <i class="fas fa-comment-dots"></i>
-  </div>
 
   <!-- Chatbot flotante -->
   <div class="chatbot-float" onclick="toggleChatbot()">
