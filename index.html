@@ -383,6 +383,85 @@ footer a:hover {
   background-color: #c0392b;
 }
 
+/* Estilo general para las preguntas frecuentes */
+#gifter-questions {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+#gifter-questions h2 {
+  text-align: center;
+  color: #ff3131;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para cada pregunta */
+.question {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Estilo del título de la pregunta */
+.question h3 {
+  padding: 15px;
+  background-color: #ff3131;
+  color: white;
+  margin: 0;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.question h3:hover {
+  background-color: #c0392b;
+}
+
+/* Estilo para la respuesta (inicialmente oculta) */
+.question p {
+  padding: 15px;
+  margin: 0;
+  display: none;
+  background-color: #f9f9f9;
+  color: #555;
+}
+
+/* Estilo para la respuesta visible */
+.question.active p {
+  display: block;
+}
+
+/* Agregar sombra a la pregunta seleccionada */
+.question.active h3 {
+  background-color: #ff3131;
+}
+
+/* Estilos para mejorar la legibilidad y la interacción */
+.question p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Añadir un pequeño efecto de transición al mostrar y ocultar las respuestas */
+.question p {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.question.active p {
+  max-height: 200px;
+}
+
+
 
   </style>
 </head>
@@ -557,6 +636,66 @@ footer a:hover {
 
   // Inicializa el carrusel al cargar la página
   updateCarousel();
+</script>
+
+<section id="gifter-questions">
+  <h2>Preguntas Frecuentes</h2>
+
+  <!-- Pregunta 1: Cómo Gifter encuentra el regalo perfecto -->
+  <div class="question">
+    <h3>¿Cómo hace Gifter para encontrar el regalo perfecto?</h3>
+    <p>
+      Gifter te guía a través de una serie de preguntas específicas sobre la persona a la que quieres regalar, como sus preferencias, edad, género, la ocasión y tu presupuesto disponible. Con esta información, Gifter utiliza inteligencia artificial para generar sugerencias personalizadas y ayudarte a encontrar el regalo ideal de manera fácil y rápida, adaptándose a las necesidades y gustos de la persona que recibirá el obsequio.
+    </p>
+  </div>
+
+  <!-- Pregunta 2: Cómo funcionan las Wishlists -->
+  <div class="question">
+    <h3>¿Cómo funcionan las Wishlists en Gifter?</h3>
+    <p>
+      Gifter te permite crear listas de deseos personalizadas. Los usuarios pueden agregar productos a su wishlist, facilitando a amigos y familiares la compra de regalos sin el estrés de no saber qué regalar. Las listas pueden ser compartidas con otras personas, y las sugerencias de regalos se basan en las preferencias de los destinatarios.
+    </p>
+  </div>
+
+  <!-- Pregunta 3: Qué es la Comunidad Gifter -->
+  <div class="question">
+    <h3>¿Qué es la Comunidad Gifter y cómo me beneficia?</h3>
+    <p>
+      La Comunidad Gifter es un espacio donde los usuarios pueden compartir recomendaciones de regalos, leer reseñas y conectarse con otros miembros para obtener ideas de regalos basadas en experiencias personales. Al unirte, puedes ganar puntos y recompensas, además de obtener acceso a consejos exclusivos y ofertas especiales.
+    </p>
+  </div>
+
+  <!-- Pregunta 4: Los Rewards -->
+  <div class="question">
+    <h3>¿Cómo funcionan los Rewards en Gifter?</h3>
+    <p>
+      Gifter ofrece un sistema de recompensas donde los usuarios ganan puntos por cada compra o recomendación. Estos puntos pueden ser canjeados por descuentos, productos gratuitos o beneficios exclusivos. Cuanto más participes en la comunidad y uses la plataforma, más recompensas puedes obtener.
+    </p>
+  </div>
+
+  <!-- Pregunta 5: Packaging de los lugares Gifter Select -->
+  <div class="question">
+    <h3>¿Qué es el packaging de los lugares Gifter Select?</h3>
+    <p>
+      Los lugares Gifter Select son aquellos que ofrecen una experiencia premium en la entrega de tus regalos. Estos lugares seleccionados se encargan de empaquetar tus productos de forma especial, utilizando materiales de alta calidad y diseños exclusivos. El packaging está pensado para sorprender y crear una experiencia memorable desde el momento de la apertura del regalo.
+    </p>
+  </div>
+
+  <!-- Pregunta 6: Cómo saber si mi pedido fue confirmado -->
+  <div class="question">
+    <h3>¿Cómo puedo saber si mi pedido fue confirmado?</h3>
+    <p>
+      Después de realizar tu compra, recibirás un correo electrónico de confirmación con los detalles de tu pedido. Además, podrás verificar el estado de tu pedido directamente en tu cuenta de Gifter en la sección de "Mis pedidos". Si tienes alguna duda, también podrás contactar al soporte para obtener información adicional sobre el estado de tu pedido.
+    </p>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.question h3').forEach(function (question) {
+    question.addEventListener('click', function () {
+      var parent = this.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
 </script>
 
 
