@@ -461,6 +461,36 @@ footer a:hover {
   max-height: 200px;
 }
 
+/* Estilos responsive para el contenedor de preguntas frecuentes */
+@media (max-width: 768px) {
+  #gifter-questions {
+    padding: 10px;
+    max-width: 100%;
+  }
+  
+  /* Ajuste de tamaño de fuente y espaciado para dispositivos móviles */
+  #gifter-questions h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .question h3 {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .question p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  /* Asegurar que las preguntas ocupen todo el ancho */
+  .question {
+    margin-bottom: 15px;
+  }
+}
+
+
 
 
   </style>
@@ -530,76 +560,135 @@ footer a:hover {
 
 </header>
 
- <!-- Carrusel de productos -->
+<!-- Carrusel de productos -->
 <section class="carrusel">
   <h2 class="carrusel-titulo">Productos Destacados</h2>
   <div class="carousel-container">
     <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
     <div class="carousel-slides">
-      <div class="slide"><img src="https://celadasa.vtexassets.com/arquivos/ids/266792/IP8400-1.jpg?v=638460356860200000" alt="Camiseta"><p>Camiseta Selección Argentina</p></div>
-      <div class="slide"><img src="https://bodelo.com.ar/wp-content/uploads/2022/11/Catalogo-Bodelo-2024-Full-18.jpg" alt="Set Matero"><p>Set Matero</p></div>
-      <div class="slide"><img src="https://saludwines.com.ar/wp-content/uploads/2024/05/RE11-scaled.jpg" alt="Vino"><p>Set Vino</p></div>
+      <div class="slide">
+        <img src="https://celadasa.vtexassets.com/arquivos/ids/266792/IP8400-1.jpg?v=638460356860200000" alt="Camiseta">
+        <!-- Contenedor para los botones -->
+        <div class="btn-container">
+          <button class="btn carrito"><i class="fas fa-shopping-cart"></i></button>
+          <button class="btn wishlist">Wishlist</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://bodelo.com.ar/wp-content/uploads/2022/11/Catalogo-Bodelo-2024-Full-18.jpg" alt="Set Matero">
+        <!-- Contenedor para los botones -->
+        <div class="btn-container">
+          <button class="btn carrito"><i class="fas fa-shopping-cart"></i></button>
+          <button class="btn wishlist">Wishlist</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://saludwines.com.ar/wp-content/uploads/2024/05/RE11-scaled.jpg" alt="Vino">
+        <!-- Contenedor para los botones -->
+        <div class="btn-container">
+          <button class="btn carrito"><i class="fas fa-shopping-cart"></i></button>
+          <button class="btn wishlist">Wishlist</button>
+        </div>
+      </div>
     </div>
     <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
   </div>
 </section>
 
+
+
 <style>
-  /* Estilo del título */
-  .carrusel-titulo {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: bold;
-  }
+/* Estilo del título */
+.carrusel-titulo {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
 
-  /* Estilos para el carrusel */
-  .carousel-container {
-    position: relative;
-    width: 80%; /* Hacemos el carrusel más largo */
-    margin: 0 auto;
-    overflow: hidden;
-  }
+/* Estilos para el carrusel */
+.carousel-container {
+  position: relative;
+  width: 80%; /* Hacemos el carrusel más largo */
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-  .carousel-slides {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-  }
+.carousel-slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
 
-  .slide {
-    min-width: 33.33%; /* Cada slide ocupa un tercio del contenedor */
-    transition: 0.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+.slide {
+  min-width: 33.33%; /* Cada slide ocupa un tercio del contenedor */
+  transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative; /* Para posicionar los botones sobre las imágenes */
+}
 
-  .slide img {
-    max-width: 100%;
-    height: auto;
-  }
+/* Estilo de las imágenes */
+.slide img {
+  max-width: 100%;
+  height: auto;
+}
 
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2em;
-    cursor: pointer;
-    padding: 10px;
-  }
+/* Estilos para los botones de acción */
+.btn-container {
+  position: absolute;
+  bottom: 10%; /* Los ubicamos en la parte inferior de la imagen */
+  left: 50%;
+  transform: translateX(-50%); /* Centrar los botones */
+  display: flex; /* Usamos flexbox para alinearlos horizontalmente */
+  gap: 10px; /* Espacio entre los botones */
+}
 
-  .carousel-button.left {
-    left: 10px;
-  }
+.btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-  .carousel-button.right {
-    right: 10px;
-  }
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carrito {
+  background-color: #ff3131; /* Verde para el carrito */
+}
+
+.wishlist {
+  background-color: #ff6b6b; /* Rojo para la wishlist */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(253, 177, 177, 0.5);
+  color: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
+
 </style>
 
 <script>
